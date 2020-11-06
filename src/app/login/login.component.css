@@ -1,0 +1,63 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.login-container>* {
+  width: 100%;
+}
+
+.text-center{
+  text-align: center;
+}
+
+/* .logo{
+  width: 600px;
+} */
+
+
+
+@media (max-width: 575.98px) {
+  .logo{
+      width: 80%;
+      height: 50px;
+      margin-top:200px;
+  }
+}
+
+/* Medium devices (tablets, 768px and down) */
+@media (max-width: 767.98px) {
+  .logo{
+      width: 80%;
+      height: 50px;
+      margin-top:200px;
+  }
+}
+
+/* Large devices (desktops, 992px and down) */
+@media (max-width: 991.98px) {
+  .logo{
+      width: 80%;
+      height: 65px;
+      margin-top: 100px;
+      
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and down) */
+@media (max-width: 1199.98px) {
+  /* .logo{
+      width: 80%;
+      height: 80px;
+      margin-top: 100px;
+  } */
+}
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .logo{
+      width: 80%;
+      height: 150px;
+      margin-top: 50px;
+  }
+}

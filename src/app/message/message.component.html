@@ -1,0 +1,7 @@
+<div *ngIf="data.message">
+    <div mat-dialog-content class="text-center">{{data.message}}</div>
+    <br>
+    <div mat-dialog-actions class="text-center">
+        <button mat-button (click)="close()" class="btn btn-primary">Ok</button>
+    </div>
+</div>
