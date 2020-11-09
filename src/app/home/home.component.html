@@ -1,1 +1,92 @@
-<p>home page!</p>
+<mat-toolbar>
+    <button mat-button [matMenuTriggerFor]="menu">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <a>
+        <div class="text-center">
+            <img src="../../assets/image/logo.png" class="logo-jarak text-center" alt="">
+        </div>
+    </a>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/userlist">User List</button>
+        <button (click)="logout()" mat-menu-item>Logout</button>
+    </mat-menu>
+</mat-toolbar>
+<ng-container>
+
+    <mat-carousel timings="250ms ease-in" [autoplay]="true" interval="5000" color="accent" maxWidth="auto"
+        proportion="45" slides="5" [loop]="true" [hideArrows]="false" [hideIndicators]="true" [useKeyboard]="true"
+        [useMouseWheel]="true" orientation="ltr">
+        <mat-carousel-slide #matCarouselSlide *ngFor="let slide of slides; let i = index" [image]="slide.image"
+            overlayColor="#00000040" [hideOverlay]="false"></mat-carousel-slide>
+    </mat-carousel>
+
+</ng-container>
+
+<hr>
+
+<!-- Form Search -->
+<div class="slider-jarak">
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text light kanan-none" id="basic-addon1">
+                <mat-icon>search</mat-icon>
+            </span>
+        </div>
+        <input type="text" class="form-control light kiri-none" placeholder="Search" aria-label="Username"
+            aria-describedby="basic-addon1">
+    </div>
+</div>
+<!-- Form Search End -->
+
+<!-- Icon Menu -->
+<div class="slider-jarak">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 text-center seperempat">
+                <span class="material-icons icon-3">
+                    card_giftcard
+                </span>
+                <p class="fo-14">Materials</p>
+            </div>
+            <div class="col-md-3 text-center seperempat">
+                <span class="material-icons icon-3">
+                    build
+                </span>
+                <p class="fo-14">Tools</p>
+            </div>
+            <div class="col-md-3 text-center seperempat">
+                <span class="material-icons icon-3">
+                    perm_data_setting
+                </span>
+                <p class="fo-14">Fitting</p>
+            </div>
+            <div class="col-md-3 text-center seperempat">
+                <span class="material-icons icon-3">
+                    category
+                </span>
+                <p class="fo-14">Others</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Icon Menu End -->
+
+<!-- Footer Menu -->
+<div class="footer">
+    <div class="container atas-4">
+        <div class="row ">
+            <div class="col-md-6 text-center setengah">
+                <a class="font-orange">
+                    <mat-icon class="icon-3"> home </mat-icon>
+                </a>
+            </div>
+            <div class="col-md-6 text-center setengah">
+                <a class="font-orange">
+                    <mat-icon class="icon-3"> account_circle </mat-icon>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer Menu End -->

@@ -1,0 +1,41 @@
+<mat-toolbar>
+    <a class="navbar-brand" class="font-hitam" routerLink="/home">
+        <div class="atas-4 kanan-5">
+            <mat-icon> arrow_back_ios </mat-icon>
+        </div>
+    </a>
+    <a class="navbar-brand">
+        <b>User List</b>
+    </a>
+</mat-toolbar>
+
+<mat-card>
+    <mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+        <ng-container matColumnDef="no">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> No </mat-header-cell>
+            <mat-cell *matCellDef="let element; let i = index;"> {{ i+1}} </mat-cell>
+            <!-- <mat-cell *matCellDef="let element"> {{element._id}} </mat-cell> -->
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+        </ng-container>
+        
+        <ng-container matColumnDef="email">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Email </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+        </ng-container>
+        
+        <ng-container matColumnDef="birthday">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Birthday </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.birthday | date:'MM/dd/yyyy'}} </mat-cell>
+        </ng-container>
+
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+</mat-card>
+
+<!-- <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator> -->

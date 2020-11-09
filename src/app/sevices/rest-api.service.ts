@@ -8,7 +8,7 @@ import { IUserdata } from '../userdata';
 })
 export class RestApiService {
 
-  url = 'http://localhost:3030/app';
+  url = 'http://localhost:3030/app/user';
 
   constructor(private http: HttpClient ) { }
   

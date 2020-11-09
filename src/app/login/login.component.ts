@@ -10,8 +10,10 @@ import { RestApiService } from '../sevices/rest-api.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  username= '';
+  email= '';
   password= '';
+
+  hide= true;
 
   btnDisabled= false;
 
@@ -23,7 +25,7 @@ export class LoginComponent implements OnInit {
   ) { }
   
   validate(){
-    if (this.username) {
+    if (this.email) {
       if (this.password) {
         return true;
         this.data.success('login seccess');
@@ -31,7 +33,7 @@ export class LoginComponent implements OnInit {
         this.data.error('please enter password');
       }
     } else {
-      this.data.error('please enter username');
+      this.data.error('please enter email');
     }
   }
 
@@ -41,7 +43,7 @@ export class LoginComponent implements OnInit {
       if (this.validate()) {
         const data= await this.rest.post(
           'http://localhost:3030/app/login',{
-            username: this.username,
+            email: this.email,
             password: this.password
           }
         );

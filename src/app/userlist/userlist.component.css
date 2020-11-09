@@ -1,0 +1,34 @@
+.mat-cell{
+    flex: 1;
+    display: block;
+    align-items: center;
+    overflow: hidden;
+    word-wrap: break-word;
+    min-height: inherit;
+    padding-left: 15px;
+}
+
+.mat-header-row{
+    display: flex;
+    border-width:thin;
+    border-bottom-width: 1px;
+    border-style: solid;
+    align-items: center;
+    box-sizing: border-box;
+    border: 1px solid #000;
+}
+
+.mat-row{
+  display: flex;
+  border-width: 0;
+  border-bottom-width: 1px;
+  border-style: solid;
+  align-items: center;
+  box-sizing: border-box;
+  border: 1px solid #000;
+}
+
+.garis{
+  border: 1px solid #000;
+}
+

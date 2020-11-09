@@ -9,11 +9,16 @@ import { MatListModule } from "@angular/material/list";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatDatepickerModule } from "@angular/material/datepicker";
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatMenuModule } from "@angular/material/menu";
+import { MatCarouselModule } from '@ngmodule/material-carousel';
+import { MatTableModule } from '@angular/material/table';
 
 
 @NgModule({
   declarations: [],
   imports: [
+    MatCarouselModule,
+    MatMenuModule,
     CommonModule,
     MatButtonModule,
     MatIconModule,
@@ -24,6 +29,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatToolbarModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatTableModule
   ],
   exports: [
     CommonModule,
@@ -35,7 +41,10 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatListModule,
     MatToolbarModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatMenuModule,
+    MatCarouselModule,
+    MatTableModule
   ]
 })
 // tslint:disable-next-line: class-name

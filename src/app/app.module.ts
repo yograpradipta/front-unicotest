@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { MatCarouselModule } from '@ngmodule/material-carousel';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +18,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { MessageComponent } from './message/message.component';
 import { AuthGuardService } from './sevices/auth-guard.service';
+import { UserlistComponent } from './userlist/userlist.component';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
@@ -28,7 +30,8 @@ import { AuthGuardService } from './sevices/auth-guard.service';
     LoginComponent,
     PageComponent,
     HomeComponent,
-    MessageComponent
+    MessageComponent,
+    UserlistComponent
   ],
   imports: [
     materialModule,
