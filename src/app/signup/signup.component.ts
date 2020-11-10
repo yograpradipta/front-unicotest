@@ -2,6 +2,7 @@ import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 import { Component, OnInit } from '@angular/core';
 import { MatCalendarCellCssClasses } from '@angular/material/datepicker';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { DataService } from '../sevices/data.service';
 import { RestApiService } from '../sevices/rest-api.service';
 
@@ -30,10 +31,9 @@ export class SignupComponent implements OnInit {
   }
 
   constructor(
-    private router: Router, 
+    private router: Router,
     public data: DataService,
-    private rest: RestApiService, 
-    // public dialog   : MatDialog
+    private rest: RestApiService,
     ){ }
 
   // tslint:disable-next-line: typedef
@@ -43,29 +43,26 @@ export class SignupComponent implements OnInit {
         if (this.password){
           if(this.confirmPassword){
             if (this.birthday) {
-              if (this.password== this.confirmPassword) {
+              if (this.password == this.confirmPassword) {
                 this.data.success('success processed');
                 return true;
               }else{
                 this.data.error('Password do not match');
               }
             }else{
-              this.data.error('birthday is not entered')
+              this.data.error('birthday is not entered');
             }
           }else{
-            this.data.error('please enter confirm password!')
+            this.data.error('please enter confirm password!');
           }
         } else{
           this.data.error('Password is not entered');
-          // this.openDialog();
         }
       } else {
         this.data.error('email is not entered');
-        // this.openDialog();
       }
     } else {
       this.data.error('Name is not entered');
-      // this.openDialog();
     }
   }
 
@@ -86,16 +83,31 @@ export class SignupComponent implements OnInit {
           localStorage.setItem('token', data['token']);
           this.data.success('Registration success!');
           this.router.navigate(['login']);
-          console.log(data['message'])
-          // this.openDialog(); 
+          console.log(data['message']);
+          Swal.fire({
+            // position: 'top-end',
+            icon: 'success',
+            title: 'Registration Success!',
+            showConfirmButton: false,
+            timer: 1500
+          });
         } else {
           console.log('error')
           this.data.error(data['message']);
-          // this.openDialog();
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: data['message']
+          });
         }
       }
       else{
         console.log(this.data.message);
+        Swal.fire({
+          icon: 'error',
+          title: 'registration Error!',
+          text: this.data['message']
+        });
       }
     } catch (error) {
       this.data.error(error['message']);

@@ -4,6 +4,7 @@
         <div class="col-md-8">
             <a>
                 <div class="text-center">
+                    <!-- <mat-spinner class="spinner-absolute" mode="indeterminate" color="warn" width="10px"></mat-spinner> -->
                     <img src="../../assets/image/logo.png" class="logo text-center" alt="logo">
                 </div>
             </a>
@@ -17,16 +18,17 @@
                     <mat-form-field class="login-container">
                         <input type="password" class="form-control" [(ngModel)]="password" name="password" matInput
                             [type]="hide ? 'password' : 'text'" placeholder="password">
-                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                                </button>
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                            [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
                     </mat-form-field>
                 </form>
             </mat-card-content>
             <mat-card-actions>
                 <a mat-raised-button class="btn-primary login-container" routerLinkActive="router-link-active"
-                    (click)="login()" type="submit">Login </a>
-                <a routerLink="/register" class="login-container btn btn-outline-primary ">Register </a>
+                    (click)="login()" type="submit" [disabled]="btnDisabled">Login </a>
+                <a mat-raised-button routerLink="/register" class="login-container btn btn-outline-primary " [disabled]="btnDisabled">Register </a>
                 <br>
 
             </mat-card-actions>

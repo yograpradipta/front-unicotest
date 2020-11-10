@@ -1,34 +1,31 @@
-.mat-cell{
-    flex: 1;
-    display: block;
-    align-items: center;
-    overflow: hidden;
-    word-wrap: break-word;
-    min-height: inherit;
-    padding-left: 15px;
+.example-container {
+  height: 400px;
+  width: 550px;
+  max-width: 100%;
+  overflow: auto;
 }
 
-.mat-header-row{
-    display: flex;
-    border-width:thin;
-    border-bottom-width: 1px;
-    border-style: solid;
-    align-items: center;
-    box-sizing: border-box;
-    border: 1px solid #000;
+table {
+  width: 800px;
 }
 
-.mat-row{
-  display: flex;
-  border-width: 0;
-  border-bottom-width: 1px;
-  border-style: solid;
-  align-items: center;
-  box-sizing: border-box;
-  border: 1px solid #000;
+td.mat-column-star {
+  width: 20px;
+  padding-right: 8px;
 }
 
-.garis{
-  border: 1px solid #000;
+th.mat-column-position, td.mat-column-position {
+  padding-left: 8px;
 }
 
+.mat-table-sticky:first-child {
+  border-right: 1px solid #e0e0e0;
+}
+
+.mat-table-sticky:last-child {
+  border-left: 1px solid #e0e0e0;
+}
+
+.font-black{
+  color: black;
+}

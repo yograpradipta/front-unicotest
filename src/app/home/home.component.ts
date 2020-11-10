@@ -3,6 +3,7 @@ import { Home } from './home.model';
 import { MatCarousel, MatCarouselComponent } from '@ngmodule/material-carousel';
 import { DataService } from '../sevices/data.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-home',
@@ -31,10 +32,22 @@ export class HomeComponent implements OnInit {
   constructor(public router: Router, 
     public data: DataService,) {}
   logout(){
-    this.data.user = {};
-    localStorage.clear();
-    this.router.navigate(['/']);
-    // this.dialogRef.close("Logout Success");
+    Swal.fire({
+      title: 'Are you sure to Logout?',
+      // text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, i am sure!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.data.user = {};
+        localStorage.clear();
+        this.router.navigate(['/']);
+      }
+    })
+
   }
 
   ngOnInit(): void {}

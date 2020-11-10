@@ -5,13 +5,17 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import { MatListModule } from "@angular/material/list";
-import { MatToolbarModule } from "@angular/material/toolbar";
-import { MatDatepickerModule } from "@angular/material/datepicker";
+import { MatListModule } from '@angular/material/list';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import { MatMenuModule } from "@angular/material/menu";
+import { MatMenuModule } from '@angular/material/menu';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
 import { MatTableModule } from '@angular/material/table';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 
 @NgModule({
@@ -29,7 +33,11 @@ import { MatTableModule } from '@angular/material/table';
     MatToolbarModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatTableModule
+    MatTableModule,
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   exports: [
     CommonModule,
@@ -44,7 +52,11 @@ import { MatTableModule } from '@angular/material/table';
     MatNativeDateModule,
     MatMenuModule,
     MatCarouselModule,
-    MatTableModule
+    MatTableModule,
+    BrowserAnimationsModule,
+    MatPaginatorModule,
+    MatProgressSpinnerModule,
+    MatSortModule
   ]
 })
 // tslint:disable-next-line: class-name

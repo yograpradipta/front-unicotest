@@ -1,6 +1,6 @@
 <mat-toolbar>
     <a class="navbar-brand" href="/">
-        <div class="jarak">
+        <div class="space">
             <mat-icon> chevron_left </mat-icon>
         </div>
     </a>
@@ -53,10 +53,10 @@
                 <div class="row">
 
                     <div class="col-auto mr-auto">
-                        <a href="/" class="btn btn-outline-primary">Batal</a>
+                        <a mat-raised-button class="login-container btn btn-outline-primary" href="/" [disabled]="btnDisabled">Batal</a>
                     </div>
                     <div class="col-auto">
-                        <button (click)='register()' class="btn btn-primary btn-block" type="button">Register</button>
+                        <button (click)='register()' class="btn btn-primary btn-block"  mat-raised-button [disabled]="btnDisabled" type="button">Register</button>
                     </div>
                 </div>
             </mat-card-actions>

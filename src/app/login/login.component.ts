@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { DataService } from '../sevices/data.service';
 import { RestApiService } from '../sevices/rest-api.service';
+
 
 
 @Component({
@@ -51,15 +53,31 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('token', data['token']);
           console.log(data['message']);
           this.data.success('login success');
+          Swal.fire({
+            icon: 'success',
+            title: 'Registration Success!',
+            showConfirmButton: false,
+            timer: 1500
+          });
           this.router.navigate(['/home']);
         }
         else{
           this.data.error(this.data['message']);
           console.log(this.data.message);
+          Swal.fire({
+            icon: 'error',
+            title: 'Login Error!',
+            text: data['message']
+          });
         }
       } else {
         this.data.error(this.data['message']);
         console.log(this.data.message);
+        Swal.fire({
+          icon: 'error',
+          title: 'Login Error!',
+          text: this.data['message']
+        });
       }
     } catch (error) {
       this.data.error(error['message']);
