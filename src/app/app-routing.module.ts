@@ -7,8 +7,8 @@ import { SignupComponent } from './signup/signup.component';
 import { UserlistComponent } from './userlist/userlist.component';
 const routes: Routes = [
   {
-    path:'',
-    component:LoginComponent,
+    path: '',
+    component: LoginComponent,
     // canActivate: [AuthGuardService]
   },
   {
@@ -22,19 +22,19 @@ const routes: Routes = [
     // canActivate: [AuthGuardService]
   },
   {
-    path:'home',
+    path: 'home',
     component: HomeComponent,
-    // canActivate: [AuthGuardService]
+    canActivate: [AuthGuardService]
   },
   {
-    path:'userlist',
+    path: 'userlist',
     component: UserlistComponent,
-    // canActivate: [AuthGuardService]
+    canActivate: [AuthGuardService]
   },
-  // {
-  //   path:'**',
-  //   redirectTo:''
-  // }
+  {
+    path: '**',
+    redirectTo: ''
+  }
 ];
 
 @NgModule({

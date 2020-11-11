@@ -29,3 +29,28 @@ th.mat-column-position, td.mat-column-position {
 .font-black{
   color: black;
 }
+
+.mat-cell{
+  flex: 1;
+  display: block;
+  align-items: center;
+  overflow: hidden;
+  word-wrap: break-word;
+  min-height: inherit;
+  padding-left: 15px;
+}
+
+.mat-header-row{
+  color: black;
+  display: flex;
+  text-decoration: solid;
+  border-style: solid;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.mat-row{
+display: flex;
+align-items: center;
+box-sizing: border-box;
+}

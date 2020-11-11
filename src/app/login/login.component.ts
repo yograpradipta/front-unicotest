@@ -12,12 +12,12 @@ import { RestApiService } from '../sevices/rest-api.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  email= '';
-  password= '';
+  email = '';
+  password = '';
 
-  hide= true;
+  hide = true;
 
-  btnDisabled= false;
+  btnDisabled = false;
 
 
   constructor(
@@ -40,22 +40,23 @@ export class LoginComponent implements OnInit {
   }
 
   async login(){
-    this.btnDisabled= true;
+    this.btnDisabled = true;
     try {
       if (this.validate()) {
-        const data= await this.rest.post(
-          'http://localhost:3030/app/login',{
+        const data = await this.rest.post(
+          'http://localhost:3030/app/login', {
             email: this.email,
             password: this.password
           }
         );
+        // tslint:disable-next-line: no-string-literal
         if (data['success']) {
           localStorage.setItem('token', data['token']);
           console.log(data['message']);
           this.data.success('login success');
           Swal.fire({
             icon: 'success',
-            title: 'Registration Success!',
+            title: 'Login Success!',
             showConfirmButton: false,
             timer: 1500
           });
@@ -82,7 +83,7 @@ export class LoginComponent implements OnInit {
     } catch (error) {
       this.data.error(error['message']);
     }
-    this.btnDisabled=false;
+    this.btnDisabled = false;
   }
 
   ngOnInit(): void {
