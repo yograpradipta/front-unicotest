@@ -44,7 +44,8 @@ export class LoginComponent implements OnInit {
     try {
       if (this.validate()) {
         const data = await this.rest.post(
-          'http://localhost:3030/app/login', {
+          // 'http://localhost:3030/app/login', {
+            'https://unicodev.herokuapp.com/app/login',{
             email: this.email,
             password: this.password
           }
@@ -87,6 +88,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    localStorage.setItem('token', '');
   }
 
 }
