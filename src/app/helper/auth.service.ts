@@ -13,16 +13,4 @@ export class AuthService {
         return localStorage.getItem('token');
       }
 
-    // canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    //     if (localStorage.getItem('token')) {
-    //         return state.url.startsWith('/')
-    //             ? true
-    //             : (this.router.navigate(['/login']), false);
-
-    //     } else {
-    //         return state.url.startsWith('/')
-    //             ? (this.router.navigate(['/login']), false)
-    //             : true;
-    //     }
-    // }
 }

@@ -9,8 +9,9 @@ import { IUserdata } from '../userdata';
 export class RestApiService {
   
   url = 'http://localhost:3030/app/user';
-  urlProfile='http://localhost:3030/app/profile';
   // url = 'https://unicodev.herokuapp.com/app/user';
+  urlProfile='http://localhost:3030/app/profile';
+  // urlProfile='https://unicodev.herokuapp.com/app/profile';
 
   constructor(private http: HttpClient ) { }
   
