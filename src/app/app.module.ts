@@ -10,6 +10,7 @@ import { RestApiService } from './sevices/rest-api.service';
 import { DataService } from './sevices/data.service';
 import { AuthService } from "./helper/auth.service";
 import { AuthInterceptor } from "./helper/auth.interceptor";
+import { GuardPageGuard } from "./sevices/guard-page.guard";
 
 import { materialModule } from './material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -47,7 +48,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     SweetAlert2Module
   ],
   providers: [
-    RestApiService, DataService, AuthGuardService, AuthService,
+    RestApiService, DataService, AuthGuardService, AuthService, GuardPageGuard,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

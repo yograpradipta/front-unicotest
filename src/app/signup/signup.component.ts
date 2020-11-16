@@ -71,8 +71,8 @@ export class SignupComponent implements OnInit {
     try{
       if (this.validate()){
         const data = await this.rest.post(
-          // 'http://localhost:3030/app/signup',
-          'https://unicodev.herokuapp.com/app/signup',
+          'http://localhost:3030/app/signup',
+          // 'https://unicodev.herokuapp.com/app/signup',
           {
             name: this.name,
             email: this.email,

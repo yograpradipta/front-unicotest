@@ -7,9 +7,10 @@ import { IUserdata } from '../userdata';
   providedIn: 'root'
 })
 export class RestApiService {
-
-  // url = 'http://localhost:3030/app/user';
-  url = 'https://unicodev.herokuapp.com/app/user';
+  
+  url = 'http://localhost:3030/app/user';
+  urlProfile='http://localhost:3030/app/profile';
+  // url = 'https://unicodev.herokuapp.com/app/user';
 
   constructor(private http: HttpClient ) { }
   
@@ -19,7 +20,13 @@ export class RestApiService {
     return token ? new HttpHeaders().set('Authorization', token) : null;
   }
 
-  
+  public getToken(){
+    return localStorage.getItem('token');
+  }
+
+  public isLogin(){
+    return !!this.getToken();
+  }
 
   get(link:string){
     return this.http.get(link, {headers: this.getHeaders() }).toPromise();
@@ -32,4 +39,9 @@ export class RestApiService {
   getUser(): Observable<IUserdata[]>{
     return this.http.get<IUserdata[]>(this.url);
   }
+
+  getDataProfile(){
+    return this.http.get<any>(this.urlProfile);
+  }
+
 }
